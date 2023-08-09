@@ -7,14 +7,14 @@
 ### 如何使用这个脚本
 
 * 下载并安装Python。
-<details>
 * 下载BBDown项目的可执行文件，将其放置到BBDown文件夹内，并根据该项目的文档配置BBDown。
 <details>
-<summary>个人关于如何配置BBDown的一些说明（针对1.60版本）</summary>
+ <summary>个人关于如何配置BBDown的一些说明（针对1.60版本）</summary>
   
   * 下载ffmpeg，并将其放置到BBDown文件夹内。
   * 在命令行中打开BBDown，使用login指令登录。（按Win+R，输入cmd后回车 - 在弹出窗口中输入cd 【BBDown.exe所处的路径名称】，如cd D:\BBDown-BilibiliAutoFollowDownloader\BBDown\，回车- 输入 BBDown login，回车- 扫描二维码登录 - 关闭窗口）。
   * 使用文本编辑器在BBDown文件夹内新建文件BBDown.config，参照BBDown项目中的说明进行进一步配置。
+
 </details>
 
 * 在主目录的FollowList.txt中填入你想要追更的UP主的UID，每行一个。
@@ -32,6 +32,7 @@
   * 在程序和脚本一栏点击浏览，找到BilibiliFollowAutoDownloader.py并点击打开。
   * **在“Start in/起始于”**一栏输入脚本所在的目录，如D:\BBDown-BilibiliAutoFollowDownloader\BBDown\。
   * 点击完成。
+
 </details>
   
   * 当你有想要关注的新UP主时，将其UID填入FollowList.txt中，随后手动运行一次脚本进行初始化。

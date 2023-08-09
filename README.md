@@ -12,7 +12,7 @@
   * 在命令行中打开BBDown，使用login指令登录。（按Win+R，输入cmd后回车 - 在弹出窗口中输入cd 【BBDown.exe所处的路径名称】，如cd D:\BBDown-BilibiliAutoFollowDownloader\BBDown\，回车- 输入 BBDown login，回车- 扫描二维码登录 - 关闭窗口）。
   * 使用文本编辑器在BBDown文件夹内新建文件BBDown.config，参照BBDown项目中的说明进行进一步配置。
 * 在主目录的FollowList.txt中填入你想要追更的UP主的UID，每行一个。
-  * 如某UP主页网址为https://space.bilibili.com/869610/，则填入869610并点击回车，随后在第二行键入你想追更的第二个UP主的UID。
+  * 如某UP主页网址为https://space.bilibili.com/869610/ ，则填入869610并点击回车，随后在第二行键入你想追更的第二个UP主的UID。
 * 点击BilibiliFollowAutoDownloader.py执行首次运行以初始化。初始化将不会下载任何视频；只有首次运行后新上传的视频会被下载。
 * 使用Task Scheduler/任务计划程序将此脚本设为定时运行（如每天一次），**注意将起始目录设为脚本目录**。详细说明如下：
   * 按Win+R，输入taskschd.msc后回车，打开Task Scheduler/任务计划程序。
@@ -34,7 +34,7 @@
 重构了整个程序，通过改变索引方式提升了稳定性、效率、和和扩展性。**请完全删除第一个版本中的文件后重新下载。**
 
 * 可以自由地添加/删除UP主
-* 将FollowList.txt中的记载格式由主页链接（如https://space.bilibili.com/869610/）改为UID （如869610）。
+* 将FollowList.txt中的记载格式由主页链接（如https://space.bilibili.com/869610/ ）改为UID （如869610）。
 * 在获取视频列表时会输出UP主昵称而非UID，方便用户理解。
 * 如遇任何问题，请整体删除BBDown\VideoRecords文件夹。
 

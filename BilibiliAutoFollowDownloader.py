@@ -36,7 +36,6 @@ def Initializer():
             # to get video record
             Command=r".\BBDown\BBDown https://space.bilibili.com/"+MID+r" --work-dir .\BBDown\Temp >nul"
             os.system(Command)
-            print(Command)
             print(r"Initializing for mid="+ MID +r"...")
             # to format the new record file and moves it
             RecordFormatter(MID)
@@ -50,6 +49,7 @@ def Initializer():
     print(r"Initialization finished.")
 
 def GetDownloadList():
+    # to clean trash in temp folder in case the program crashed last time
     Trashlist=os.listdir(r".\BBdown\Temp")
     for Trash in Trashlist:
         os.remove(os.path.join(r".\BBdown\Temp", Trash))
@@ -58,7 +58,6 @@ def GetDownloadList():
     RecordDir=r".\BBDown\VideoRecords"
     AllCurRecords = os.listdir(RecordDir)
     for Recordtxt in AllCurRecords:
-        print(Recordtxt)
         MID=Recordtxt.replace(r".txt","")
         CurRecord = open(os.path.join(RecordDir, Recordtxt), "r")
         CurVideoList = CurRecord.read().splitlines()
@@ -74,11 +73,14 @@ def GetDownloadList():
         Existing = False
         i = 0 
         while Existing == False:
-            if CurVideoList.count(NewVideoList[i])==0:
+        # comparing the new video list with the WHOLE old list, in case the newest one in old list was deleted.
+            if NewVideoList[i] not in CurVideoList:
                 DownloadList.append(NewVideoList[i])
                 i+=1
             else:
                 Existing = True
+                # it assumes that, at least one video in the new list will appear in the old list. If the assumption fails then this program will crash.
+        # to replace the old list by the new list. The replacement is alaways executed even in case two lists are identical to reduce programming complexity.
         os.remove(os.path.join(RecordDir,Recordtxt))
         RecordFormatter(MID)
     return DownloadList

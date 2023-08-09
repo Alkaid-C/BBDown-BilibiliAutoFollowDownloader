@@ -7,14 +7,23 @@
 ### 如何使用这个脚本
 
 * 下载并安装Python。
-* 下载BBDown项目的可执行文件，将其放置到BBDown文件夹内，并根据该项目的文档配置BBDown。以下是个人关于如何配置BBDown的一些说明（针对1.60版本）：
+<details>
+* 下载BBDown项目的可执行文件，将其放置到BBDown文件夹内，并根据该项目的文档配置BBDown。
+<details>
+<summary>个人关于如何配置BBDown的一些说明（针对1.60版本）</summary>
+  
   * 下载ffmpeg，并将其放置到BBDown文件夹内。
   * 在命令行中打开BBDown，使用login指令登录。（按Win+R，输入cmd后回车 - 在弹出窗口中输入cd 【BBDown.exe所处的路径名称】，如cd D:\BBDown-BilibiliAutoFollowDownloader\BBDown\，回车- 输入 BBDown login，回车- 扫描二维码登录 - 关闭窗口）。
   * 使用文本编辑器在BBDown文件夹内新建文件BBDown.config，参照BBDown项目中的说明进行进一步配置。
+</details>
+
 * 在主目录的FollowList.txt中填入你想要追更的UP主的UID，每行一个。
   * 如某UP主页网址为https://space.bilibili.com/869610/ ，则填入869610并点击回车，随后在第二行键入你想追更的第二个UP主的UID。
 * 点击BilibiliFollowAutoDownloader.py执行首次运行以初始化。初始化将不会下载任何视频；只有首次运行后新上传的视频会被下载。
-* 使用Task Scheduler/任务计划程序将此脚本设为定时运行（如每天一次），**注意将起始目录设为脚本目录**。详细说明如下：
+* 使用Task Scheduler/任务计划程序将此脚本设为定时运行（如每天一次），**注意将起始目录设为脚本目录**。
+<details>
+ <summary>详细说明</summary>
+  
   * 按Win+R，输入taskschd.msc后回车，打开Task Scheduler/任务计划程序。
   * 点击右侧“Create Basic Task/创建基本任务”。
   * 在弹出窗口中输入任务名称，点击下一步。
@@ -23,6 +32,8 @@
   * 在程序和脚本一栏点击浏览，找到BilibiliFollowAutoDownloader.py并点击打开。
   * **在“Start in/起始于”**一栏输入脚本所在的目录，如D:\BBDown-BilibiliAutoFollowDownloader\BBDown\。
   * 点击完成。
+</details>
+  
   * 当你有想要关注的新UP主时，将其UID填入FollowList.txt中，随后手动运行一次脚本进行初始化。
 
 ### 更新记录

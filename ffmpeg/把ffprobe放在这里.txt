@@ -1,0 +1,2 @@
+把ffprobe.exe放在这里，这样脚本才能工作
+ffprobe一般会和ffmpeg被捆绑下载

@@ -1,0 +1,2 @@
+把BBDown.exe放在这里，这样脚本才能工作
+Put BBDown.exe here so that this scrpit work

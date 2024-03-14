@@ -1,0 +1,1 @@
+把BBDown.exe，BBDown.config, ffmpeg.exe放在这里，这样脚本才能工作

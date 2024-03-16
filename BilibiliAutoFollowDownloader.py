@@ -9,13 +9,13 @@ import time
 import sys
 from datetime import datetime
 
-
-TempDir=r".\BBDown\data\temp"
-RecordDir=r".\BBDown\data\record"
-BBDownPath=r".\BBDown\bin\bbdown.exe"
+TempDir=r".\BiliBiliCacher\data\temp"
+RecordDir=r".\BiliBiliCacher\data\record"
+BBDownPath=r".\BiliBiliCacher\bin\bbdown.exe"
 FFprobePath=r".\ffmpeg\ffprobe.exe"
+FFmpegPath=r".\ffmpeg\ffmpeg.exe"
 CachePath=r"E:\BiliBiliCache\Cache"
-FollowListPath=r".\BBDown\Followlist.txt"
+FollowListPath=r".\BiliBiliCacher\Followlist.txt"
 DownloadPath=r"E:\BiliBiliCache"
 
 
@@ -92,23 +92,10 @@ def Initializer():
         os.makedirs(RecordDir)
     if not os.path.exists(TempDir):
         os.makedirs(TempDir)
-    if not os.path.exists(CachePath):
-        os.makedirs(CachePath)
-    if not os.path.exists(DownloadPath):
-        os.makedirs(DownloadPath)
-    if not os.path.exists(FFprobePath):
-        print(r"error: ffprobe.exe not found, disable postDownloadFix or edit path varible")
-        os.system("PAUSE")
-    if not os.path.exists(BBDownPath):
-        print(r"error: BBDown.exe not found, edit path variable")
-        os.system("PAUSE")
-    if not os.path.exists(FollowListPath):
-        print(r"error: Followlist.txt not found, edit path variable")
-        os.system("PAUSE")
     Trashlist=os.listdir(TempDir)
     for Trash in Trashlist:
         os.remove(os.path.join(TempDir, Trash))
-        Trashlist=os.listdir(CachePath)
+    Trashlist=os.listdir(CachePath)
     for Trash in Trashlist:
         os.remove(os.path.join(CachePath, Trash))
     FollowListFile = open(FollowListPath, encoding="utf8")
@@ -133,6 +120,15 @@ def Initializer():
             Rewrite=True
         else:
             NewFollowList.append(Line)
+            
+    if Rewrite==True:
+        NewFollowListFile=open(os.path.join(TempDir,r"NewFollowList.txt"),"x",encoding="utf-8")
+        for line in NewFollowList:
+            NewFollowListFile.write(f"{line}\n")
+        NewFollowListFile.close()
+        os.remove(FollowListPath)
+        os.rename(os.path.join(TempDir,r"NewFollowList.txt"),FollowListPath)
+        
     for MIDtxt in CurFileList:
         # clean for no longer followed video record
         if MIDtxt.replace(r".txt","") not in MIDList:

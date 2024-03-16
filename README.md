@@ -7,7 +7,8 @@
 ### 如何使用这个脚本
 
 * 下载并安装Python。
-* 下载BBDown项目的可执行文件，将其放置到BBDown文件夹内，并根据该项目的文档配置BBDown。以下是个人关于如何配置BBDown的一些说明（针对1.60版本）：
+* 下载ffprobe (ffmpeg项目的一部分），并将其放置在脚本开头FFprobePath所指定的位置。（默认为.\ffmpeg\ffprobe.exe）
+* 下载BBDown项目的可执行文件，将其放置在脚本开头BBDownPath所指定的位置（默认为.\BiliBiliCacher\bin\bbdown.exe），并根据该项目的文档配置BBDown。以下是个人关于如何配置BBDown的一些说明（针对1.60版本）：
 <details>
  <summary>个人关于如何配置BBDown的一些说明（针对1.60版本）</summary>
   
@@ -17,8 +18,8 @@
   * 使用文本编辑器
 
 </details>
-
-* 在BBDown目录中的FollowList.txt中填入你想要追更的UP主的UID，每行一个。
+* 更改脚本开头的CachePath和DownloadPath变量，使其符合你的使用习惯（默认为E:\BiliBiliCache\Cache和E:\BiliBiliCache）。DownloadPath为最终视频存储的位置。建议将CachePath和DownloadPath放在一个盘符中以避免无谓复制。
+* 在在脚本开头FollowListPath指定的位置（默认为.\BiliBiliCacher\Followlist.txt）创建一个txt文档，在其中填入你想要追更的UP主的UID，每行一个。
   * 如某UP主页网址为https://space.bilibili.com/869610/ ，则填入869610并点击回车，随后在第二行键入你想追更的第二个UP主的UID。
 * 点击BilibiliFollowAutoDownloader.py执行首次运行以初始化。初始化将不会下载任何视频；只有首次运行后新上传的视频会被下载。
 * 使用Task Scheduler/任务计划程序将此脚本设为定时运行（如每天一次），**注意将起始目录设为脚本目录**。
@@ -30,7 +31,7 @@
   * 设置Trigger/触发器，建议选择每日或当前用户登陆时，点击下一步。
   * 在Action/操作一栏选择“Start a program/启动程序”。
   * 在程序和脚本一栏点击浏览，找到BilibiliFollowAutoDownloader.py并点击打开。
-  * **在“Start in/起始于”**一栏输入脚本所在的目录，如D:\BBDown-BilibiliAutoFollowDownloader\BBDown\。
+  * **在“Start in/起始于”**一栏输入脚本所在的目录，如D:\BBDown-BilibiliAutoFollowDownloader\。
   * 点击完成。
 
 </details>

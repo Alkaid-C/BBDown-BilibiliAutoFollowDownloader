@@ -73,7 +73,8 @@
 
 - [ ] 在FollowList.txt中自动添加UP主昵称备注以方便删除
 
-- [ ] 支持UP分类功能，下载至不同文件夹
+-<del> [ ] 支持UP分类功能，下载至不同文件夹</del>
+此功能被放弃。但是，因为目前FollowList.txt的路径和下载路径两个变量不再写死在脚本文件各处，而是在脚本开头由FollowListPath和DownloadPath两个变量声明，因此一个简单的workaround为将此脚本复制多份，为每一份分别指定不同的FollowListPath和DownloadPath即可。
 
   
 

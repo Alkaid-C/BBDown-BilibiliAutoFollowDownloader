@@ -17,6 +17,7 @@
   * 使用文本编辑器
 
 </details>
+
 * 更改脚本开头的CachePath和DownloadPath变量，使其符合你的使用习惯（默认为E:\BiliBiliCache\Cache和E:\BiliBiliCache）。DownloadPath为最终视频存储的位置。建议将CachePath和DownloadPath放在一个盘符中以避免无谓复制。
 * 在在脚本开头FollowListPath指定的位置（默认为.\BiliBiliCacher\Followlist.txt）创建一个txt文档，在其中填入你想要追更的UP主的UID，每行一个。
 * 如某UP主页网址为https://space.bilibili.com/869610/ ，则填入869610并点击回车，随后在第二行键入你想追更的第二个UP主的UID。

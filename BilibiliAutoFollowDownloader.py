@@ -9,6 +9,7 @@ import time
 import sys
 from datetime import datetime
 
+#请按需更改以下变量。
 TempDir=r".\BiliBiliCacher\data\temp"
 RecordDir=r".\BiliBiliCacher\data\record"
 BBDownPath=r".\BiliBiliCacher\bin\bbdown.exe"
@@ -66,6 +67,7 @@ def isLandscape(videoPath):
     return height<=width
     
 def PostDownloadFix(workDir, finalDir):
+        #如果不需要展平或是删除竖屏视频，请直接注释掉本函数的内容
         flatten(workDir,workDir)
         count = 0
         ContentList=os.listdir(workDir)
